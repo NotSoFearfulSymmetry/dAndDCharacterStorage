@@ -19,3 +19,5 @@
 9/15/2020 Week 2 exercise: 3 hours
 
 9/16/2020 Week 2 exercise: all day
+
+9/17/2020 Week 3 videos: 1.25 hours
