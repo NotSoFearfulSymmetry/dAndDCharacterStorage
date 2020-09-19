@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dAndDCharacterStorage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>dAndDCharacterStorage</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="dAndDCharacterStorage.war">
+      <element id="artifact" artifact-name="dAndDCharacterStorage:war exploded" />
+    </root>
+  </artifact>
+</component>
