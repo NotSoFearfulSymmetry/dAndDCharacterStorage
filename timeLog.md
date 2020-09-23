@@ -21,3 +21,7 @@
 9/16/2020 Week 2 exercise: all day
 
 9/17/2020 Week 3 videos: 1.25 hours
+
+9/19/2020 - added .jsp files, pom.xml, and updated structure for indie project: 1.5 hours
+
+9/22/2020 - created wireframes for indie project; worked on weekly exercise: 1.5 hours
