@@ -18,4 +18,20 @@ Create wireframes and .jsp files.  Choose background and font.
 
 ## Week 5
 
-Design database; begin implementing unit testing and logging.
+Design database and classes.
+
+## Week 6
+
+Implement unit testing, logging, and authentication.
+
+## Week 7
+
+Populate database with three characters (one player-exclusive, one GM-exclusive, one shared between player and GM).
+
+## Week 8
+
+Make sure everything is ready to deploy.
+
+## Week 9
+
+Deploy the application.
