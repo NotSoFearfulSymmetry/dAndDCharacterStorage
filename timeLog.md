@@ -25,3 +25,5 @@
 9/19/2020 - added .jsp files, pom.xml, and updated structure for indie project: 1.5 hours
 
 9/22/2020 - created wireframes for indie project; worked on weekly exercise: 1.5 hours
+
+9/28/2020 - week 3 exercise: 1.5 hours
