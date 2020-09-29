@@ -27,3 +27,5 @@
 9/22/2020 - created wireframes for indie project; worked on weekly exercise: 1.5 hours
 
 9/28/2020 - week 3 exercise: 1.5 hours
+
+9/29/2020 - week 3 exercise: 2 hours
