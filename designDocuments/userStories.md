@@ -1,11 +1,20 @@
 # User Stories
 
-## Jane, the gamemaster
+## Sign Up
 
-I am currently running two D&D games on alternating weekends.  Between them, I have to keep track of around thirty named NPCs, not to mention the nameless characters I've generated to serve as extras.  It would be helpful if there were a single online portal where I could keep track of all these characters.
+As a user, I want to create an account so that I can store my D&D characters.*
 
-## Jeff, the player
+## Sign in
 
-I've been playing D&D since middle school.  It's fun to get together with friends and use our imaginations to tell stories together, but I also like creating characters even when I don't have a game to run them in.  I'd really like a website where I could add, remove, or update characters whenever I think of them.
+As a registered user, I want to log in so that I can review, update, or delete my characters.*
 
-(Both of these stories are part of MVP).
+## Share Character
+
+As a registered user, I want to have the option to share a given character with another registered user, so that we both can review, update, or delete it.*
+
+## Sample Character
+
+As a new user, I want to see a sample character on the homepage, so that I can see the format of the information being stored.
+
+*Denotes MVP
+
