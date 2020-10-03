@@ -26,7 +26,7 @@ Implement unit testing, logging, and authentication.
 
 ## Week 7
 
-Populate database with three characters (one player-exclusive, one GM-exclusive, one shared between player and GM).
+Populate database with at least one sample character.
 
 ## Week 8
 

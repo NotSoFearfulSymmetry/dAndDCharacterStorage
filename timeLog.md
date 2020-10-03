@@ -31,3 +31,5 @@
 9/29/2020 - week 3 exercise, revised indie project design documents: 3.5 hours
 
 9/30/2020 - week 4 exercise: 5 hours
+
+10/2/2020 - added Hibernate annotations to indie project: 1 hour
