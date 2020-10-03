@@ -33,3 +33,5 @@
 9/30/2020 - week 4 exercise: 5 hours
 
 10/2/2020 - added Hibernate annotations to indie project: 1 hour
+
+10/3/2020 - added classes and config files to indie project: 1 hour
