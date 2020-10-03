@@ -28,4 +28,6 @@
 
 9/28/2020 - week 3 exercise: 1.5 hours
 
-9/29/2020 - week 3 exercise: 2 hours
+9/29/2020 - week 3 exercise, revised indie project design documents: 3.5 hours
+
+9/30/2020 - week 4 exercise: 5 hours
