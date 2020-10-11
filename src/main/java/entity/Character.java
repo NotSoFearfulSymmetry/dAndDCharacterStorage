@@ -76,6 +76,12 @@ public class Character {
     private int id;
 
     /**
+     * Bidirectional @OneToMany
+     */
+    @ManyToOne
+    private User user;
+
+    /**
      * Gets name
      * @return the name
      */
