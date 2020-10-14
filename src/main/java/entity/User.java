@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -15,19 +16,19 @@ import java.util.Set;
 @Table(name = "user")
 public class User {
 
-    @Column(name = "user_name")
-    private String userName;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "email")
-    private String email;
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
+
+    @Column(name = "username")
+    private String userName;
+
+//    @Column(name = "password")
+//    private String password;
+
+    @Column(name = "email")
+    private String email;
 
     /**
      * Bidirectional @OneToMany
@@ -45,12 +46,10 @@ public class User {
      * Instantiates a new User.
      *
      * @param userName the user name
-     * @param password  the user's password
      * @param email  the user's email
      */
-    public User(String userName, String password, String email) {
+    public User(String userName, String email) {
         this.userName = userName;
-        this.password = password;
         this.email = email;
     }
 
@@ -74,17 +73,17 @@ public class User {
      * Gets password
      * @return the password
      */
-    public String getPassword() {
-        return password;
-    }
+//    public String getPassword() {
+//        return password;
+//    }
 
     /**
      * Sets password
      * @param password the password
      */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
 
     /**
      * Gets email
@@ -122,9 +121,24 @@ public class User {
     public String toString() {
         return "User{" +
                 "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
+//                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                userName.equals(user.userName) &&
+                email.equals(user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userName, email);
     }
 }

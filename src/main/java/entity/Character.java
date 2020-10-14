@@ -3,6 +3,7 @@ package entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * A class that represents a Dungeons & Dragons character
@@ -12,6 +13,11 @@ import javax.persistence.*;
 @Entity(name = "Character")
 @Table(name = "character")
 public class Character {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
 
     @Column(name = "name")
     private String name;
@@ -67,19 +73,83 @@ public class Character {
     @Column(name = "second_user_access")
     private boolean secondUserAccess;
 
-    @Column(name = "second_user_name")
-    private String secondUserName;
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int id;
+    @Column(name = "second_username")
+    private String secondUsername;
 
     /**
      * Bidirectional @OneToMany
      */
     @ManyToOne
     private User user;
+
+    /**
+     * Constructor without arguments
+     */
+    public Character() {
+
+    }
+
+    /**
+     * Constructor with arguments
+     * @param name the name
+     * @param race the race
+     * @param gender the gender
+     * @param classAndLevel the class and level
+     * @param strength the strength
+     * @param dexterity the dexterity
+     * @param constitution the constitution
+     * @param intelligence the intelligence
+     * @param wisdom the wisdom
+     * @param charisma the charisma
+     * @param hitPoints the hit points
+     * @param skills the skills
+     * @param feats the feats
+     * @param classFeatures the class features
+     * @param equipment the equipment
+     * @param description the description
+     * @param background the background
+     * @param secondUserAccess whether a second user has access
+     * @param secondUsername the secondary user, if any
+     * @param user the main user
+     */
+    public Character(String name, String race, String gender, String classAndLevel, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int hitPoints, String skills, String feats, String classFeatures, String equipment, String description, String background, boolean secondUserAccess, String secondUsername, User user) {
+        this.name = name;
+        this.race = race;
+        this.gender = gender;
+        this.classAndLevel = classAndLevel;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.constitution = constitution;
+        this.intelligence = intelligence;
+        this.wisdom = wisdom;
+        this.charisma = charisma;
+        this.hitPoints = hitPoints;
+        this.skills = skills;
+        this.feats = feats;
+        this.classFeatures = classFeatures;
+        this.equipment = equipment;
+        this.description = description;
+        this.background = background;
+        this.secondUserAccess = secondUserAccess;
+        this.secondUsername = secondUsername;
+        this.user = user;
+    }
+
+    /**
+     * Gets ID
+     * @return the ID
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets ID
+     * @param id the ID
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Gets name
@@ -374,56 +444,47 @@ public class Character {
      * @return the second account name
      */
     public String getSecondUserName() {
-        return secondUserName;
+        return secondUsername;
     }
 
     /**
      * Sets second account name, if applicable
-     * @param secondUserName the second account name
+     * @param secondUsername the second account name
      */
-    public void setSecondUserName(String secondUserName) {
-        this.secondUserName = secondUserName;
-    }
-
-    /**
-     * Gets ID
-     * @return the ID
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets ID
-     * @param id the ID
-     */
-    public void setId(int id) {
-        this.id = id;
+    public void setSecondUserName(String secondUsername) {
+        this.secondUsername = secondUsername;
     }
 
     @Override
-    public String toString() {
-        return "Character{" +
-                "name='" + name + '\'' +
-                ", race='" + race + '\'' +
-                ", gender='" + gender + '\'' +
-                ", classAndLevel='" + classAndLevel + '\'' +
-                ", strength='" + strength + '\'' +
-                ", dexterity='" + dexterity + '\'' +
-                ", constitution='" + constitution + '\'' +
-                ", intelligence='" + intelligence + '\'' +
-                ", wisdom='" + wisdom + '\'' +
-                ", charisma='" + charisma + '\'' +
-                ", hitPoints='" + hitPoints + '\'' +
-                ", skills='" + skills + '\'' +
-                ", feats='" + feats + '\'' +
-                ", classFeatures='" + classFeatures + '\'' +
-                ", equipment='" + equipment + '\'' +
-                ", description='" + description + '\'' +
-                ", background='" + background + '\'' +
-                ", secondUserAccess='" + secondUserAccess + '\'' +
-                ", secondUserName='" + secondUserName + '\'' +
-                ", id=" + id +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Character character = (Character) o;
+        return id == character.id &&
+                strength == character.strength &&
+                dexterity == character.dexterity &&
+                constitution == character.constitution &&
+                intelligence == character.intelligence &&
+                wisdom == character.wisdom &&
+                charisma == character.charisma &&
+                hitPoints == character.hitPoints &&
+                secondUserAccess == character.secondUserAccess &&
+                Objects.equals(name, character.name) &&
+                Objects.equals(race, character.race) &&
+                Objects.equals(gender, character.gender) &&
+                Objects.equals(classAndLevel, character.classAndLevel) &&
+                Objects.equals(skills, character.skills) &&
+                Objects.equals(feats, character.feats) &&
+                Objects.equals(classFeatures, character.classFeatures) &&
+                Objects.equals(equipment, character.equipment) &&
+                Objects.equals(description, character.description) &&
+                Objects.equals(background, character.background) &&
+                Objects.equals(secondUsername, character.secondUsername) &&
+                Objects.equals(user, character.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, race, gender, classAndLevel, strength, dexterity, constitution, intelligence, wisdom, charisma, hitPoints, skills, feats, classFeatures, equipment, description, background, secondUserAccess, secondUsername, user);
     }
 }

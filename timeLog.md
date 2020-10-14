@@ -37,3 +37,7 @@
 10/3/2020 - added classes and config files to indie project: 1 hour
 
 10/7/2020 - week 5 exercise: 3 hours
+
+10/11/2020 - week 5 exercise: 4 hours
+
+10/13/2020 - worked on tests for indie project: 2 hours
