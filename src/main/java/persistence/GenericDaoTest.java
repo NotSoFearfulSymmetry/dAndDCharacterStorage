@@ -78,7 +78,6 @@ class GenericDaoTest {
         assertEquals(1, insertedUser.getOrders().size());
         // Could continue comparing all values, but
         // it may make sense to use .equals()
-        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
     }
 
     /**
@@ -95,7 +94,6 @@ class GenericDaoTest {
         assertEquals("Fred", insertedUser.getFirstName());
         // Could continue comparing all values, but
         // it may make sense to use .equals()
-        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
     }
 
     /**

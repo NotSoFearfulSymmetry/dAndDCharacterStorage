@@ -9,7 +9,10 @@
 
 /home/student/IdeaProjects/dAndDCharacterStorage/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/sample</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/DungeonsAndDragons</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

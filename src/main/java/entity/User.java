@@ -117,6 +117,30 @@ public class User {
         this.id = id;
     }
 
+    public Set<Character> getCharacters() { return characters; }
+
+    public void setCharacters(Set<Character> characters) { this.characters = characters; }
+
+    /**
+     * Add a character.
+     *
+     * @param character the character to add
+     */
+    public void addCharacter(Character character) {
+        characters.add( character );
+        character.setUser( this );
+    }
+
+    /**
+     * Remove a character.
+     *
+     * @param character the character to remove
+     */
+    public void removeCharacter(Character character) {
+        characters.remove( character );
+        character.setUser( null );
+    }
+
     @Override
     public String toString() {
         return "User{" +

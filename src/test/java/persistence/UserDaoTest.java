@@ -1,6 +1,7 @@
 package persistence;
 
 import entity.User;
+import entity.Character;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
@@ -58,8 +59,7 @@ class UserDaoTest {
         assertNotNull(insertedUser);
         assertEquals(newUser, insertedUser);
 
-        //TODO: create a new character for insertion
-        Character newCharacter = new Character();
+        Character newCharacter = new Character('Vanessa Gearloose', 'gnome', 'female', 'Sorcerer 12', 6, 7, 11, 13, 13, 15, 26, 'Bluff 15, Concentration 15, Spellcraft 15', 'Combat Casting, Silent Spell, Still Spell, Empower Spell, Maximize Spell','Summon familiar, 9/5/5/4/3/2/1 spells known, 6/6/6/6/6/5/3 spells per day','Ring of Minor Spell Storing, Wand of Magic Missile','I\'m a petite powerhouse who likes bringing wonder into the lives of the people around me!', 'Well, it all started when I woke up to find my bed was on fire.  That was when I learned I had inborn arcane powers...');
         int characterId = characterDao.insert(newCharacter);
         assertNotEquals(0, characterId);
         Character insertedCharacter = characterDao.getById(characterId);
