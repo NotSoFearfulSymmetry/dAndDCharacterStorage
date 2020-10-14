@@ -24,6 +24,7 @@ class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("setupTestDatabase.sql");
         dao = new UserDao();
+        characterDao = new CharacterDao();
     }
 
     /**

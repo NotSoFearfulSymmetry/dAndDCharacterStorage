@@ -42,4 +42,4 @@
 
 10/13/2020 - worked on tests for indie project: 2 hours
 
-10/14/2020 - worked on tests for indie project: 2 hours
+10/14/2020 - worked on tests and database configuration for indie project: 3 hours
