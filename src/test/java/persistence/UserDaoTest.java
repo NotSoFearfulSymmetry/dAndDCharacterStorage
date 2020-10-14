@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserDaoTest {
 
     UserDao dao;
+    CharacterDao characterDao;
 
     /**
     * Run set up tasks before each test:
@@ -18,7 +19,7 @@ class UserDaoTest {
     @BeforeEach
     void setUp() {
         test.util.Database database = test.util.Database.getInstance();
-        database.runSQL("setupDatabase.sql");
+        database.runSQL("setupTestDatabase.sql");
         dao = new UserDao();
     }
 
@@ -28,10 +29,8 @@ class UserDaoTest {
     @Test
     void getByIdSuccess() {
         User retrievedUser = dao.getById(3);
-        assertEquals("Herbert Schilt", retrievedUser.getAuthor());
-        assertEquals("Java: A Beginner’s Guide (Sixth Edition)", retrievedUser.getTitle());
-        assertEquals("978-0071809252", retrievedUser.getIsbn());
-        assertEquals(2014, retrievedUser.getPublicationYear());
+        assertEquals("ElfLord", retrievedUser.getUserName();
+        assertEquals("WoodElvesAreTheBest@juno.com", retrievedUser.getEmail());
     }
 
     /**
@@ -39,13 +38,12 @@ class UserDaoTest {
     */
     @Test
     void saveOrUpdateSuccess() {
-        Book retrievedBook = dao.getById(2);
-        retrievedBook.setTitle("This is the New Title");
-        dao.saveOrUpdate(retrievedBook);
-        assertEquals("This is the New Title", retrievedBook.getTitle());
-        assertEquals("joseph ottinger", retrievedBook.getAuthor());
-        assertEquals("978-1-4842-2319-2", retrievedBook.getIsbn());
-        assertEquals(2016, retrievedBook.getPublicationYear());
+        String newUsername = "YourAccountIsPwned";
+        User retrievedUser = dao.getById(2);
+        retrievedUser.setUserName(newUsername);
+        dao.saveOrUpdate(retrievedUser);
+        User updatedUser = dao.getById(2);
+        assertEquals(newUsername, updatedUser.getUserName());
     }
 
     /**
@@ -53,14 +51,20 @@ class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        Book newBook = new Book("How to Save a Life", "The Fray", "867-5309", 2009);
-        int id = dao.insert(newBook);
-        assertNotEquals(0,id);
-        Book insertedBook = dao.getById(id);
-        assertEquals("How to Save a Life", insertedBook.getTitle());
-        assertEquals("The Fray", insertedBook.getAuthor());
-        assertEquals("867-5309", insertedBook.getIsbn());
-        assertEquals(2009, insertedBook.getPublicationYear());
+        User newUser = new User("IAmThatIAm", "lordGod@heaven.net");
+        int userId = dao.insert(newUser);
+        assertNotEquals(0, userId);
+        User insertedUser = dao.getById(userId);
+        assertNotNull(insertedUser);
+        assertEquals(newUser, insertedUser);
+
+        //TODO: create a new character for insertion
+        Character newCharacter = new Character();
+        int characterId = characterDao.insert(newCharacter);
+        assertNotEquals(0, characterId);
+        Character insertedCharacter = characterDao.getById(characterId);
+        assertNotNull(insertedCharacter);
+        assertEquals(newCharacter, insertedCharacter);
     }
 
     /**
@@ -77,8 +81,8 @@ class UserDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Book> books = dao.getAll();
-        assertEquals(3, books.size());
+        List<User> users = dao.getAll();
+        assertEquals(3, users.size());
     }
 
     /**
@@ -86,9 +90,8 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Book> books = dao.getByPropertyEqual("title", "Beginning Hibernate");
-        assertEquals(1, books.size());
-        assertEquals(2, books.get(0).getId());
+        List<User> users = dao.getByPropertyEqual("username", "ElfLord");
+        assertEquals(1, users.size());
     }
 
     /**
@@ -96,7 +99,7 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<Book> books = dao.getByPropertyLike("author", "Kat");
-        assertEquals(1, books.size());
+        List<User> users = dao.getByPropertyLike("email", "burn");
+        assertEquals(1, users.size());
     }
 }
