@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import persistence.CharacterDao;
 import persistence.UserDao;
-import test.util.Database;
+import testUtils.Database;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ class CharacterDaoTest {
     void insertSuccess() {
         UserDao userDao = new UserDao();
         User user = userDao.getById(1);
-        Character newCharacter = new Character('Vanessa Gearloose', 'gnome', 'female', 'Sorcerer 12', 6, 7, 11, 13, 13, 15, 26, 'Bluff 15, Concentration 15, Spellcraft 15', 'Combat Casting, Silent Spell, Still Spell, Empower Spell, Maximize Spell','Summon familiar, 9/5/5/4/3/2/1 spells known, 6/6/6/6/6/5/3 spells per day','Ring of Minor Spell Storing, Wand of Magic Missile','I\'m a petite powerhouse who likes bringing wonder into the lives of the people around me!', 'Well, it all started when I woke up to find my bed was on fire.  That was when I learned I had inborn arcane powers...');
+        Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Bluff 15, Concentration 15, Spellcraft 15", "Combat Casting, Silent Spell, Still Spell, Empower Spell, Maximize Spell", "Summon familiar, 9/5/5/4/3/2/1 spells known, 6/6/6/6/6/5/3 spells per day", "Ring of Minor Spell Storing, Wand of Magic Missile", "I'm a petite powerhouse who likes bringing wonder into the lives of the people around me!", "Well, it all started when I woke up to find my bed was on fire.  That was when I learned I had inborn arcane powers...", true, "RogueOneThird", user);
         user.addCharacter(newCharacter);
         int id = dao.insert(newCharacter);
         assertNotEquals(0, id);
@@ -69,7 +69,7 @@ class CharacterDaoTest {
      */
     @Test
     void updateSuccess() {
-        int newName = "Miri the Clumsy";
+        String newName = "Miri the Clumsy";
         Character characterToUpdate = dao.getById(2);
         characterToUpdate.setName(newName);
         dao.saveOrUpdate(characterToUpdate);

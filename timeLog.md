@@ -41,3 +41,5 @@
 10/11/2020 - week 5 exercise: 4 hours
 
 10/13/2020 - worked on tests for indie project: 2 hours
+
+10/14/2020 - worked on tests for indie project: 2 hours
