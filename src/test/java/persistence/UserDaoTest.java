@@ -32,6 +32,7 @@ class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
+        //TODO: ask about a way to do this with hashcode and .equals()
         User retrievedUser = dao.getById(3);
         assertEquals("ElfLord", retrievedUser.getUserName());
         assertEquals("WoodElvesAreTheBest@juno.com", retrievedUser.getEmail());
@@ -93,7 +94,7 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = dao.getByPropertyEqual("username", "ElfLord");
+        List<User> users = dao.getByPropertyEqual("userName", "ElfLord");
         assertEquals(1, users.size());
     }
 

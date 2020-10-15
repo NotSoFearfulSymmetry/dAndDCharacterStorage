@@ -39,13 +39,13 @@ class CharacterDaoTest {
      */
     @Test
     void getByIdSuccess() {
+        //TODO: ask about a way to do this with hashcode and .equals()
         Character retrievedCharacter = dao.getById(1);
         assertEquals("George Longshanks", retrievedCharacter.getName());
         assertEquals("human", retrievedCharacter.getRace());
         assertEquals("male", retrievedCharacter.getGender());
         assertEquals("Fighter 9", retrievedCharacter.getClassAndLevel());
     }
-
 
     /**
      * Verify successful insertion of a Character
@@ -93,5 +93,23 @@ class CharacterDaoTest {
     void getAllSuccess() {
         List<Character> characters = dao.getAll();
         assertEquals(3, characters.size());
+    }
+
+    /**
+     * Verify successful get by property (equal match)
+     */
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Character> characters = dao.getByPropertyEqual("race", "elf");
+        assertEquals(1, characters.size());
+    }
+
+    /**
+     * Verify successful get by property (like match)
+     */
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Character> characters = dao.getByPropertyLike("name", "shanks");
+        assertEquals(1, characters.size());
     }
 }

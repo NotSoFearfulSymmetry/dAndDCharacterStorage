@@ -24,8 +24,9 @@ public class User {
     @Column(name = "username")
     private String userName;
 
-//    @Column(name = "password")
-//    private String password;
+    //TODO: Ask about having this as a String.
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "email")
     private String email;
@@ -73,17 +74,17 @@ public class User {
      * Gets password
      * @return the password
      */
-//    public String getPassword() {
-//        return password;
-//    }
+    public String getPassword() {
+        return password;
+    }
 
     /**
      * Sets password
      * @param password the password
      */
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     /**
      * Gets email
@@ -139,16 +140,6 @@ public class User {
     public void removeCharacter(Character character) {
         characters.remove( character );
         character.setUser( null );
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-//                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                '}';
     }
 
     @Override
