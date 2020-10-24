@@ -43,3 +43,9 @@
 10/13/2020 - worked on tests for indie project: 2 hours
 
 10/14/2020 - worked on tests and database configuration for indie project: 3 hours
+
+10/20/2020 - week 6 exercise: 3 hours
+
+10/21/2020 - week 7 exercise: 5 hours
+
+10/24/2020 - implemented form authentication in indie project: 

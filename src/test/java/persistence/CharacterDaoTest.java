@@ -41,6 +41,7 @@ class CharacterDaoTest {
     void getByIdSuccess() {
         //TODO: ask about a way to do this with hashcode and .equals()
         Character retrievedCharacter = dao.getById(1);
+        // expectedCharacter = new Character(yada yada)
         assertEquals("George Longshanks", retrievedCharacter.getName());
         assertEquals("human", retrievedCharacter.getRace());
         assertEquals("male", retrievedCharacter.getGender());
