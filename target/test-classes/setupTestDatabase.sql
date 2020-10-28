@@ -53,7 +53,7 @@ UNLOCK TABLES;
 CREATE TABLE role (
     id INT AUTO_INCREMENT PRIMARY KEY,
     role_name VARCHAR(25) NOT NULL,
-    user_name VARCHAR(15) NOT NULL,
+    username VARCHAR(25) NOT NULL,
     user_id INT NOT NULL,
     CONSTRAINT role_id_uindex UNIQUE (id),
     CONSTRAINT role_user_user_id_fk FOREIGN KEY (user_id) REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE

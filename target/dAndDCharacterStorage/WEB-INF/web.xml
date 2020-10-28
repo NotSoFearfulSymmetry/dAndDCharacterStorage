@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>Dungeons and Dragons Character Storage</display-name>
+  <display-name>Dungeons and Dragons Character Vault</display-name>
 
   <!-- Tell the server to use form-based authentication. -->
   <login-config>
@@ -26,11 +26,11 @@
     </auth-constraint>
   </security-constraint>
 
-<!--  Protect the results page.-->
+<!--  Protect the character display page.-->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>results</web-resource-name>
-      <url-pattern>/results.jsp</url-pattern>
+      <web-resource-name>characters</web-resource-name>
+      <url-pattern>/characters.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
