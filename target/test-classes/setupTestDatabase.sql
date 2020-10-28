@@ -4,15 +4,16 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
+  `pass` varchar(30) NULL,
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_uindex` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES (1,'ElfLord', 'WoodElvesAreBestElves@juno.com');
-INSERT INTO `user` VALUES (2,'RogueOneThird','backstabber123@hotmail.com');
-INSERT INTO `user` VALUES (3,'iamthedragon42','burninator@hsr.com');
+INSERT INTO `user` VALUES (1,'ElfLord', 'testPassword1', 'WoodElvesAreBestElves@juno.com');
+INSERT INTO `user` VALUES (2,'RogueOneThird', 'testPassword2', 'backstabber123@hotmail.com');
+INSERT INTO `user` VALUES (3,'iamthedragon42', 'testPassword3', 'burninator@hsr.com');
 UNLOCK TABLES;
 
 CREATE TABLE `character` (
