@@ -10,11 +10,9 @@ CREATE TABLE `user` (
 
 
 LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES (1,'ElfLord', 'WoodElvesAreBestElves@juno.com');
 INSERT INTO `user` VALUES (2,'RogueOneThird','backstabber123@hotmail.com');
 INSERT INTO `user` VALUES (3,'iamthedragon42','burninator@hsr.com');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -49,9 +47,7 @@ CREATE TABLE `character` (
 
 
 LOCK TABLES `character` WRITE;
-/*!40000 ALTER TABLE `character` DISABLE KEYS */;
-INSERT INTO `character` VALUES (1, 'George Longshanks', 'human', 'male', 'Fighter 9', 15, 11, 13, 8, 6, 8, 57, 'Climb 12, Jump 12', 'Improved Initiative, Weapon Focus (greatsword), Weapon Specialization (greatsword), Weapon Focus(warhammer), Weapon Specialization (warhammer), 5 more', 'Proficient with all armor, all shields, and all simple and martial weapons', '+1 greatsword, full plate, bag of holding, 5 greater healing potions', 'A big, bulky man - not too bright or charming, but more than capable of tearing through his enemies.  His dark, shaggy hair suggests a wild life, and the scars that cover him from head to toe support that interpretation.', 'Born, grew up, became an adventurer.  Did I mention my companions and I all met in an inn?', FALSE, NULL, 1);
-INSERT INTO `character` VALUES (2, 'Miri the Far-sighted', 'elf', 'female', 'Ranger 5', 12, 6, 12, 11, 11, 10, 34, 'Handle Animal 8, Hide 8, Move Silently 8, Listen 8, Spot 8, Survival 8', 'Precise Shot, Point-blank Shot', 'Proficient with light armor, non-tower shields, and all simple and martial weapons; favored enemy (orcs), wild empathy, archery style, animal companion (hawk)', '+1 Longbow, Endless Quiver, travel kit', 'With hair like spun gold, and eyes the color of a stormy sky on the cusp of clearing, Mirindeneven Lothellendar of the Forgotten Forest, known to her companions as Miri the Far-sighted, is the very picture of grace and elegance.  This is due entirely to extensive training, because with her natural dexterity, there is a reasonable chance that she could fall out of a boat and miss the water.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', TRUE, 'iamthedragon42', 2);
-INSERT INTO `character` VALUES (3, 'Flint Firefist', 'dwarf', 'male', 'Monk 3', 13, 13, 13, 10, 10, 9, 22, 'Balance 6, Diplomacy 6, Jump 6, Sense Motive 6', 'Improved Unarmed Strike, Stunning Fist', 'Monk weapon proficiencies, Wisdom bonus to AC, Flurry of Blows, Evasion, Fast Movement', 'quarterstaff', 'About four-foot-four, 200 pounds, well-trimmed red beard, head hair shaved off, friendly enough, as long as you do not interrupt his meditations', 'Flint came from the Firefist clan of the dwarves who live in the Fellhammer Mountains.  He never had much taste for the wild, boisterous celebrations of his people, and when he came of age, he left to seek a quieter, more contemplative life with the monastic Order of the Open Palm.  Though his journey has only just begun, Flint believes he has found his path.', FALSE, NULL, 3);
-/*!40000 ALTER TABLE `character` ENABLE KEYS */;
+INSERT INTO `character` VALUES (1, 'George Longshanks', 'human', 'male', 'Fighter 9', 15, 11, 13, 8, 6, 8, 57, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 1);
+INSERT INTO `character` VALUES (2, 'Miri the Far-sighted', 'elf', 'female', 'Ranger 5', 12, 6, 12, 11, 11, 10, 34, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', TRUE, 'iamthedragon42', 2);
+INSERT INTO `character` VALUES (3, 'Flint Firefist', 'dwarf', 'male', 'Monk 3', 13, 13, 13, 10, 10, 9, 22, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 3);
 UNLOCK TABLES;
