@@ -15,8 +15,6 @@
     </form-login-config>
   </login-config>
 
-<!--  TODO: update these for the project.-->
-
   <!-- Protect the admin page. -->
   <security-constraint>
     <web-resource-collection>
@@ -28,15 +26,15 @@
     </auth-constraint>
   </security-constraint>
 
-<!--  Protect the display page.-->
+<!--  Protect the results page.-->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>display</web-resource-name>
-      <url-pattern>display.jsp</url-pattern>
+      <web-resource-name>results</web-resource-name>
+      <url-pattern>results.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
-      <role-name>all</role-name>
+      <role-name>user</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -45,9 +43,7 @@
   </security-role>
   
   <security-role>
-    <role-name>all</role-name>
+    <role-name>user</role-name>
   </security-role>
-
-
 
 </web-app>
