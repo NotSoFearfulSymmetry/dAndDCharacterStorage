@@ -30,7 +30,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>results</web-resource-name>
-      <url-pattern>results.jsp</url-pattern>
+      <url-pattern>/results.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
