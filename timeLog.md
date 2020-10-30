@@ -48,4 +48,6 @@
 
 10/21/2020 - week 7 exercise: 5 hours
 
-10/24/2020 - implemented form authentication in indie project: 
+10/24/2020 - implemented form authentication in indie project: 2 hours
+
+10/27/2020 - week 8 exercise: 5 hours
