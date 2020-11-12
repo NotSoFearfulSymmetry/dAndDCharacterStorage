@@ -1,11 +1,19 @@
-<%@include file="head.jsp"%>
+<%--
+  Created by IntelliJ IDEA.
+  User: paulawaite
+  Date: 9/18/15
+  Time: 5:41 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<body>
-
-<h1>Welcome to the D & D Character Vault!</h1>
-    <form method="get" action="${pageContext.request.contextPath}/searchCharacters">
-        <input type="submit" id="signIn">Sign In
-        <input type="submit" id="createAccount">Create Account
-    </form>
-</body>
+  <head>
+    <title>Form-Based Authentication Example</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="admin.jsp">Take me to the Admin Page</a></li>
+      <li><a href="viewCharacters.jsp">Show me my characters!</a></li>
+    </ul>
+  </body>
 </html>
