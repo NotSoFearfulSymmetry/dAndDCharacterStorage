@@ -4,22 +4,18 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
-  `pass` varchar(30) NULL,
+  `password` varchar(30) NULL,
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_uindex` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `user` WRITE;
-<<<<<<< HEAD
-INSERT INTO `user` VALUES (1,'ElfLord', 'WoodElvesAreBestElves@juno.com');
-INSERT INTO `user` VALUES (2,'RogueOneThird','backstabber123@hotmail.com');
-INSERT INTO `user` VALUES (3,'iamthedragon42','burninator@hsr.com');
-=======
+
 INSERT INTO `user` VALUES (1,'ElfLord', 'testPassword1', 'WoodElvesAreBestElves@juno.com');
 INSERT INTO `user` VALUES (2,'RogueOneThird', 'testPassword2', 'backstabber123@hotmail.com');
 INSERT INTO `user` VALUES (3,'iamthedragon42', 'testPassword3', 'burninator@hsr.com');
->>>>>>> 7df07e0920847a81608b03d6f7e140fa6e378d25
+
 UNLOCK TABLES;
 
 CREATE TABLE `character` (
@@ -51,9 +47,9 @@ CREATE TABLE `character` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `character` WRITE;
-INSERT INTO `character` VALUES (1, 'George Longshanks', 'human', 'male', 'Fighter 9', 15, 11, 13, 8, 6, 8, 57, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 1);
-INSERT INTO `character` VALUES (2, 'Miri the Far-sighted', 'elf', 'female', 'Ranger 5', 12, 6, 12, 11, 11, 10, 34, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', TRUE, 'iamthedragon42', 2);
-INSERT INTO `character` VALUES (3, 'Flint Firefist', 'dwarf', 'male', 'Monk 3', 13, 13, 13, 10, 10, 9, 22, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 3);
+INSERT INTO `character` VALUES (1, 'GeorgeLongshanks', 'human', 'male', 'Fighter9', 15, 11, 13, 8, 6, 8, 57, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 1);
+INSERT INTO `character` VALUES (2, 'MiritheFarsighted', 'elf', 'female', 'Ranger5', 12, 6, 12, 11, 11, 10, 34, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', TRUE, 'iamthedragon42', 2);
+INSERT INTO `character` VALUES (3, 'FlintFirefist', 'dwarf', 'male', 'Monk3', 13, 13, 13, 10, 10, 9, 22, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 3);
 UNLOCK TABLES;
 
 CREATE TABLE role (
@@ -66,21 +62,8 @@ CREATE TABLE role (
                   ) ENGINE = InnoDB;
 CREATE INDEX role_user_user_id_fk ON role (user_id);
 
-<<<<<<< HEAD
-LOCK TABLES `character` WRITE;
-INSERT INTO `character` VALUES (1, 'George Longshanks', 'human', 'male', 'Fighter 9', 15, 11, 13, 8, 6, 8, 57, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 1);
-INSERT INTO `character` VALUES (2, 'Miri the Far-sighted', 'elf', 'female', 'Ranger 5', 12, 6, 12, 11, 11, 10, 34, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', TRUE, 'iamthedragon42', 2);
-INSERT INTO `character` VALUES (3, 'Flint Firefist', 'dwarf', 'male', 'Monk 3', 13, 13, 13, 10, 10, 9, 22, 'Skills', 'Feats', 'Class Features', 'Equipment', 'Description', 'Background', FALSE, NULL, 3);
-UNLOCK TABLES;
-
-
-
-CREATE TABLE role(id INT AUTO_INCREMENT PRIMARY KEY, role_name VARCHAR(25) NOT NULL, user_name VARCHAR(15) NOT NULL, user_id INT NOT NULL, CONSTRAINT role_id_uindex UNIQUE (id), CONSTRAINT role_user_user_id_fk FOREIGN KEY (user_id) REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE) ENGINE = InnoDB;
-CREATE INDEX role_user_user_id_fk ON role (user_id);
-=======
 LOCK TABLES `role` WRITE;
 INSERT INTO `role` VALUES (1, 'admin', 'ElfLord', 1);
 INSERT INTO `role` VALUES (2, 'user', 'iamthedragon42', 3);
 INSERT INTO `role` VALUES (3, 'user', 'RogueOneThird', 2);
 UNLOCK TABLES;
->>>>>>> 7df07e0920847a81608b03d6f7e140fa6e378d25

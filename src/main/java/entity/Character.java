@@ -80,6 +80,7 @@ public class Character {
      * Bidirectional @OneToMany
      */
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     /**
