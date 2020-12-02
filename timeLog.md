@@ -54,6 +54,10 @@
 
 11/4/2020 - team project: 3 hours
 
+11/23/2020 - worked with Pure CSS in indie project: 1 hour
+
+12/1/2020 - worked with tests in indie project: 1 hour
+
 11/10/2020 - week 10 exercise: 0.5 hours
 
 11/11/2020 - team project: 2 hours

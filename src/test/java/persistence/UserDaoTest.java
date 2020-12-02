@@ -5,7 +5,6 @@ import entity.Character;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testUtils.Database;
-
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,9 +29,9 @@ class UserDaoTest {
     /**
      * Verify successful retrieval of a user
      */
+    //TODO: ask about a way to do this with hashcode and .equals()
     @Test
     void getByIdSuccess() {
-        //TODO: ask about a way to do this with hashcode and .equals()
         User retrievedUser = dao.getById(3);
         assertEquals("ElfLord", retrievedUser.getUserName());
         assertEquals("WoodElvesAreTheBest@juno.com", retrievedUser.getEmail());
@@ -56,14 +55,14 @@ class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User newUser = new User("WeWillSquawkYou", "WeWillSquawkYou@yahoo.com");
+        User newUser = new User("WeWillSquawkYou", "testPassword4", "WeWillSquawkYou@yahoo.com");
         int userId = dao.insert(newUser);
         assertNotEquals(0, userId);
         User insertedUser = dao.getById(userId);
         assertNotNull(insertedUser);
         assertEquals(newUser, insertedUser);
 
-        Character newCharacter = new Character("VanessaGearloose", "gnome", "female", "Sorcerer12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "ClassFeatures", "Equipment", "Description", "Background", true, "RogueOneThird", newUser);
+        Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "Class Features", "Equipment", "Description", "Background", true, "RogueOneThird", insertedUser);
         int characterId = characterDao.insert(newCharacter);
         assertNotEquals(0, characterId);
         Character insertedCharacter = characterDao.getById(characterId);

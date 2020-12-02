@@ -19,7 +19,7 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private int id;
+    private int user_id;
 
     @Column(name = "username")
     private String userName;
@@ -47,10 +47,12 @@ public class User {
      * Instantiates a new User.
      *
      * @param userName the user name
+     * @param password the password
      * @param email  the user's email
      */
-    public User(String userName, String email) {
+    public User(String userName, String password, String email) {
         this.userName = userName;
+        this.password = password;
         this.email = email;
     }
 
@@ -107,15 +109,15 @@ public class User {
      * @return the ID
      */
     public int getId() {
-        return id;
+        return user_id;
     }
 
     /**
      * Sets ID
-     * @param id the ID
+     * @param user_id the ID
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int user_id) {
+        this.user_id = user_id;
     }
 
     public Set<Character> getCharacters() { return characters; }
@@ -147,13 +149,13 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id &&
+        return user_id == user.user_id &&
                 userName.equals(user.userName) &&
                 email.equals(user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, email);
+        return Objects.hash(user_id, userName, email);
     }
 }

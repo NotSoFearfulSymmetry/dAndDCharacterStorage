@@ -1,15 +1,11 @@
 package persistence;
 
-import entity.User;
 import entity.Character;
+import entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import persistence.CharacterDao;
-import persistence.UserDao;
 import testUtils.Database;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /** Unit test for CharacterDao
@@ -37,11 +33,10 @@ class CharacterDaoTest {
     /**
      * Verify successful retrieval of a Character
      */
+    //TODO: ask about a way to do this with hashcode and .equals()
     @Test
     void getByIdSuccess() {
-        //TODO: ask about a way to do this with hashcode and .equals()
         Character retrievedCharacter = dao.getById(1);
-        // expectedCharacter = new Character(yada yada)
         assertEquals("George Longshanks", retrievedCharacter.getName());
         assertEquals("human", retrievedCharacter.getRace());
         assertEquals("male", retrievedCharacter.getGender());
@@ -55,7 +50,7 @@ class CharacterDaoTest {
     void insertSuccess() {
         UserDao userDao = new UserDao();
         User user = userDao.getById(1);
-        Character newCharacter = new Character("VanessaGearloose", "gnome", "female", "Sorcerer12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "ClassFeatures", "Equipment", "Description", "Background", true, "RogueOneThird", user);
+        Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "Class Features", "Equipment", "Description", "Background", true, "RogueOneThird", user);
         user.addCharacter(newCharacter);
         int id = dao.insert(newCharacter);
         assertNotEquals(0, id);
@@ -70,7 +65,7 @@ class CharacterDaoTest {
      */
     @Test
     void updateSuccess() {
-        String newName = "MiriTheClumsy";
+        String newName = "Miri the Clumsy";
         Character characterToUpdate = dao.getById(2);
         characterToUpdate.setName(newName);
         dao.saveOrUpdate(characterToUpdate);
