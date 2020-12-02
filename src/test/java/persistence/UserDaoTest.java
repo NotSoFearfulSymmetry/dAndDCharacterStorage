@@ -12,6 +12,8 @@ class UserDaoTest {
 
     UserDao dao;
     CharacterDao characterDao;
+    GenericDao genericUser;
+    GenericDao genericCharacter;
 
     /**
     * Run set up tasks before each test:
@@ -24,6 +26,8 @@ class UserDaoTest {
         database.runSQL("setupTestDatabase.sql");
         dao = new UserDao();
         characterDao = new CharacterDao();
+        genericUser = new GenericDao(User.class);
+        genericCharacter = new GenericDao(Character.class);
     }
 
     /**
@@ -32,9 +36,9 @@ class UserDaoTest {
     //TODO: ask about a way to do this with hashcode and .equals()
     @Test
     void getByIdSuccess() {
-        User retrievedUser = dao.getById(3);
+        User retrievedUser = (User)genericUser.getById(1);
         assertEquals("ElfLord", retrievedUser.getUserName());
-        assertEquals("WoodElvesAreTheBest@juno.com", retrievedUser.getEmail());
+        assertEquals("WoodElvesAreBestElves@juno.com", retrievedUser.getEmail());
     }
 
     /**

@@ -16,6 +16,8 @@ class CharacterDaoTest {
 
     UserDao userDao;
     CharacterDao dao;
+    GenericDao genericUser;
+    GenericDao genericCharacter;
 
     /**
      * Run set up tasks before each test:
@@ -28,6 +30,8 @@ class CharacterDaoTest {
         database.runSQL("setupTestDatabase.sql");
         dao = new CharacterDao();
         userDao = new UserDao();
+        genericUser = new GenericDao(User.class);
+        genericCharacter = new GenericDao(Character.class);
     }
 
     /**

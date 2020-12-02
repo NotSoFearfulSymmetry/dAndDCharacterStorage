@@ -52,7 +52,7 @@ public class GenericDao<T> {
      * @param id entity ID to search by
      * @return entity
      */
-    public <T> T getById(int id) {
+    public <T>T getById(int id) {
         Session session = getSession();
         T entity = (T)session.get(type, id);
         session.close();
@@ -128,8 +128,8 @@ public class GenericDao<T> {
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
         List<Predicate> predicates = new ArrayList<Predicate>();
-        for (Map.Entry entry: propertyMap.entrySet()) {
-            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
+        for (Map.Entry<String, Object> entry: propertyMap.entrySet()) {
+            predicates.add(builder.equal(root.get(entry.getKey()), entry.getValue()));
         }
         query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
 

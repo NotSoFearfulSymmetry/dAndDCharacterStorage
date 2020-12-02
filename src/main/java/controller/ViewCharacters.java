@@ -2,9 +2,9 @@ package controller;
 
 import entity.Character;
 import persistence.GenericDao;
-import util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.DaoFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
