@@ -13,7 +13,7 @@
   <body>
     <ul>
       <li><a href="admin.jsp">Take me to the Admin Page</a></li>
-      <li><a href="characters.jsp">Show me my characters!</a></li>
+      <li><a href="viewCharacters.jsp">Show me my characters!</a></li>
     </ul>
   </body>
 </html>

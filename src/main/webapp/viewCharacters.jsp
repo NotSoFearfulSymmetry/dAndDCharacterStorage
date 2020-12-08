@@ -2,12 +2,6 @@
 <html>
 <jsp:include page="head.jsp" />
 
-<script type="text/javascript" class="init">
-    $(document).ready( function () {
-        $('#trailsTable').DataTable();
-    } );
-</script>
-
 <body role="document">
 
 <div class="container-fluid"  role="main">
