@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 
+import entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -106,7 +104,7 @@ public class GenericDao<T> {
      * @param value the value to match.
      * @return
      */
-    public List<T> findByPropertyEqual(String propertyName, Object value) {
+    public List<T> getByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
@@ -116,24 +114,22 @@ public class GenericDao<T> {
     }
 
     /**
-     * Finds entities by multiple properties.
-     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
-     * @param propertyMap property and value pairs
-     * @return entities with properties equal to those passed in the map
-     *
+     * Gets an entity or entities by matching part of a property value.
+     * @param propertyName the property
+     * @param value the value
+     * @return the entity or entities
      */
-    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
+    public List<T> getByPropertyLike(String propertyName, Object value) {
         Session session = getSession();
+        logger.debug("Searching for entity with {} = {}",  propertyName, value);
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        List<Predicate> predicates = new ArrayList<Predicate>();
-        for (Map.Entry<String, Object> entry: propertyMap.entrySet()) {
-            predicates.add(builder.equal(root.get(entry.getKey()), entry.getValue()));
-        }
-        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
-
-        return session.createQuery(query).getResultList();
+        Expression<String> propertyPath = root.get(propertyName);
+        query.where(builder.like(propertyPath, "%" + value + "%"));
+        List<T> entities = session.createQuery(query).getResultList();
+        session.close();
+        return entities;
     }
 
     /**

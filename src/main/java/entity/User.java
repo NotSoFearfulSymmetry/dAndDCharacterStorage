@@ -120,8 +120,16 @@ public class User {
         this.user_id = user_id;
     }
 
+    /**
+     * Gets a set of Characters.
+     * @return the character set
+     */
     public Set<Character> getCharacters() { return characters; }
 
+    /**
+     * Sets a set of Charcters.
+     * @param characters the set of Characters
+     */
     public void setCharacters(Set<Character> characters) { this.characters = characters; }
 
     /**
