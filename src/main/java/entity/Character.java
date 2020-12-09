@@ -80,6 +80,7 @@ public class Character {
      * Bidirectional @OneToMany
      */
     @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
     private User user;
 
     /**
@@ -455,10 +456,18 @@ public class Character {
         this.secondUsername = secondUsername;
     }
 
+    /**
+     * Gets a User
+     * @return the User
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets a User
+     * @param user the User
+     */
     public void setUser(User user) {
         this.user = user;
     }

@@ -122,7 +122,7 @@ public class User {
 
     /**
      * Gets a set of Characters.
-     * @return the character set
+     * @return the Character set
      */
     public Set<Character> getCharacters() { return characters; }
 
