@@ -58,19 +58,19 @@ class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User newUser = new User("WeWillSquawkYou", "testPassword4", "WeWillSquawkYou@yahoo.com");
+        User newUser = new User("WeWillSquawkYou", "testPassword4", "WeWillSquawkYou@yahoo.com", null);
         int userId = genericUser.insert(newUser);
         assertNotEquals(0, userId);
         User insertedUser = (User)genericUser.getById(userId);
         assertNotNull(insertedUser);
         assertEquals(newUser, insertedUser);
 
-//        Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "Class Features", "Equipment", "Description", "Background", true, "RogueOneThird", insertedUser);
-//        int characterId = characterDao.insert(newCharacter);
-//        assertNotEquals(0, characterId);
-//        Character insertedCharacter = characterDao.getById(characterId);
-//        assertNotNull(insertedCharacter);
-//        assertEquals(newCharacter, insertedCharacter);
+        Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "Class Features", "Equipment", "Description", "Background", true, "RogueOneThird", insertedUser);
+        int characterId = genericCharacter.insert(newCharacter);
+        assertNotEquals(0, characterId);
+        Character insertedCharacter = (Character)genericCharacter.getById(characterId);
+        assertNotNull(insertedCharacter);
+        assertEquals(newCharacter, insertedCharacter);
     }
 
     /**

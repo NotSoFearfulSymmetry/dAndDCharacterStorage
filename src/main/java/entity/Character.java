@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author Simon Powers-Schaub
  */
 @Entity(name = "Character")
-@Table(name = "character")
+@Table(name = "dnd_character")
 public class Character {
 
     @Id
@@ -80,7 +80,7 @@ public class Character {
      * Bidirectional @OneToMany
      */
     @ManyToOne
-    @JoinColumn(name="user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     /**
@@ -470,6 +470,33 @@ public class Character {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", race='" + race + '\'' +
+                ", gender='" + gender + '\'' +
+                ", classAndLevel='" + classAndLevel + '\'' +
+                ", strength=" + strength +
+                ", dexterity=" + dexterity +
+                ", constitution=" + constitution +
+                ", intelligence=" + intelligence +
+                ", wisdom=" + wisdom +
+                ", charisma=" + charisma +
+                ", hitPoints=" + hitPoints +
+                ", skills='" + skills + '\'' +
+                ", feats='" + feats + '\'' +
+                ", classFeatures='" + classFeatures + '\'' +
+                ", equipment='" + equipment + '\'' +
+                ", description='" + description + '\'' +
+                ", background='" + background + '\'' +
+                ", secondUserAccess=" + secondUserAccess +
+                ", secondUsername='" + secondUsername + '\'' +
+                ", user=" + user +
+                '}';
     }
 
     @Override

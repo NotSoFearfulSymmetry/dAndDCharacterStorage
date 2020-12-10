@@ -70,10 +70,10 @@ class CharacterDaoTest {
     @Test
     void updateSuccess() {
         String newName = "Miri the Clumsy";
-        Character characterToUpdate = dao.getById(2);
+        Character characterToUpdate = (Character)genericCharacter.getById(2);
         characterToUpdate.setName(newName);
         dao.saveOrUpdate(characterToUpdate);
-        Character characterAfterUpdate = dao.getById(2);
+        Character characterAfterUpdate = (Character)genericCharacter.getById(2);
         assertEquals(newName, characterAfterUpdate.getName());
     }
 
@@ -82,8 +82,8 @@ class CharacterDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        genericCharacter.delete(genericCharacter.getById(3));
+        assertNull(genericCharacter.getById(3));
     }
 
     /**
@@ -91,7 +91,7 @@ class CharacterDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Character> characters = dao.getAll();
+        List<Character> characters = genericCharacter.getAll();
         assertEquals(3, characters.size());
     }
 
@@ -100,7 +100,7 @@ class CharacterDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Character> characters = dao.getByPropertyEqual("race", "elf");
+        List<Character> characters = genericCharacter.getByPropertyEqual("race", "elf");
         assertEquals(1, characters.size());
     }
 
@@ -109,7 +109,7 @@ class CharacterDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<Character> characters = dao.getByPropertyLike("name", "shanks");
+        List<Character> characters = genericCharacter.getByPropertyLike("name", "shanks");
         assertEquals(1, characters.size());
     }
 }

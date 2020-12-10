@@ -19,7 +19,7 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private int user_id;
+    private int id;
 
     @Column(name = "username")
     private String userName;
@@ -49,11 +49,13 @@ public class User {
      * @param userName the user name
      * @param password the password
      * @param email  the user's email
+     * @param characters the user's characters
      */
-    public User(String userName, String password, String email) {
+    public User(String userName, String password, String email, Set<Character> characters) {
         this.userName = userName;
         this.password = password;
         this.email = email;
+        this.characters = characters;
     }
 
     /**
@@ -109,15 +111,15 @@ public class User {
      * @return the ID
      */
     public int getId() {
-        return user_id;
+        return id;
     }
 
     /**
      * Sets ID
-     * @param user_id the ID
+     * @param id the ID
      */
-    public void setId(int user_id) {
-        this.user_id = user_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -153,17 +155,28 @@ public class User {
     }
 
     @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", characters=" + characters +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return user_id == user.user_id &&
+        return id == user.id &&
                 userName.equals(user.userName) &&
                 email.equals(user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(user_id, userName, email);
+        return Objects.hash(id, userName, email);
     }
 }
