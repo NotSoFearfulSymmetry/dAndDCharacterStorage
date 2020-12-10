@@ -8,14 +8,10 @@ import testUtils.Database;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-/** Unit test for CharacterDao
- *
- * @author Paula Waite
+/**
+ * Unit tests for CharacterDao
  */
 class CharacterDaoTest {
-
-    UserDao userDao;
-    CharacterDao dao;
     GenericDao genericUser;
     GenericDao genericCharacter;
 
@@ -28,16 +24,13 @@ class CharacterDaoTest {
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("setupTestDatabase.sql");
-        dao = new CharacterDao();
-        userDao = new UserDao();
         genericUser = new GenericDao(User.class);
         genericCharacter = new GenericDao(Character.class);
     }
 
     /**
-     * Verify successful retrieval of a Character
+     * Verify successful retrieval of a character
      */
-    //TODO: ask about a way to do this with hashcode and .equals()
     @Test
     void getByIdSuccess() {
         Character retrievedCharacter = (Character)genericCharacter.getById(1);
@@ -48,37 +41,36 @@ class CharacterDaoTest {
     }
 
     /**
-     * Verify successful insertion of a Character
+     * Verify successful insertion of a character
      */
     @Test
     void insertSuccess() {
-        UserDao userDao = new UserDao();
-        User user = userDao.getById(1);
+        User user = (User)genericUser.getById(1);
         Character newCharacter = new Character("Vanessa Gearloose", "gnome", "female", "Sorcerer 12", 6, 7, 11, 13, 13, 15, 26, "Skills", "Feats", "Class Features", "Equipment", "Description", "Background", true, "RogueOneThird", user);
         user.addCharacter(newCharacter);
-        int id = dao.insert(newCharacter);
+        int id = genericCharacter.insert(newCharacter);
         assertNotEquals(0, id);
-        Character insertedCharacter = dao.getById(id);
+        Character insertedCharacter = (Character)genericCharacter.getById(id);
         assertNotNull(insertedCharacter);
         assertNotNull(insertedCharacter.getUser());
         assertEquals(newCharacter, insertedCharacter);
     }
 
     /**
-     * Verify successful update of a Character
+     * Verify successful update of a character
      */
     @Test
     void updateSuccess() {
         String newName = "Miri the Clumsy";
         Character characterToUpdate = (Character)genericCharacter.getById(2);
         characterToUpdate.setName(newName);
-        dao.saveOrUpdate(characterToUpdate);
+        genericCharacter.saveOrUpdate(characterToUpdate);
         Character characterAfterUpdate = (Character)genericCharacter.getById(2);
         assertEquals(newName, characterAfterUpdate.getName());
     }
 
     /**
-     * Verify successful deletion of a Character
+     * Verify successful deletion of a character
      */
     @Test
     void deleteSuccess() {
@@ -87,7 +79,7 @@ class CharacterDaoTest {
     }
 
     /**
-     * Verify successful retrieval of all Characters
+     * Verify successful retrieval of all characters
      */
     @Test
     void getAllSuccess() {

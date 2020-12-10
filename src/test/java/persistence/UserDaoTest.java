@@ -8,10 +8,10 @@ import testUtils.Database;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for UserDao
+ */
 class UserDaoTest {
-
-//    UserDao dao;
-//    CharacterDao characterDao;
     GenericDao genericUser;
     GenericDao genericCharacter;
 
@@ -24,8 +24,6 @@ class UserDaoTest {
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("setupTestDatabase.sql");
-//        dao = new UserDao();
-//        characterDao = new CharacterDao();
         genericUser = new GenericDao(User.class);
         genericCharacter = new GenericDao(Character.class);
     }

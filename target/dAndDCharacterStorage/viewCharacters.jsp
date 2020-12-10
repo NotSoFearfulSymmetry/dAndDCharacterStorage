@@ -29,6 +29,7 @@
         <th>Second Username</th>
         </thead>
         <tbody>
+        <jsp:useBean id="characters" scope="request" type="java.util.List"/>
         <c:forEach var="character" items="${characters}">
             <tr>
                 <td>${character.name}</td>
