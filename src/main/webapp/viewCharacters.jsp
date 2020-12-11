@@ -5,6 +5,7 @@
 <body role="document">
 
 <div class="container-fluid"  role="main">
+    <a href="addCharacter.jsp">Add New Character</a>
     <h2>Characters: </h2>
     <table id="trailsTable" class="display" cellspacing="0" width="100%">
         <thead>
@@ -51,6 +52,7 @@
                 <td>${character.background}</td>
                 <td>${character.secondUserAccess}</td>
                 <td>${character.secondUsername}</td>
+                <td><a href="deleteCharacter.jsp">Delete This Character</a></td>
             </tr>
         </c:forEach>
         </tbody>
