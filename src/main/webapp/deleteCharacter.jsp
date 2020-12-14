@@ -2,29 +2,12 @@
 <html>
 <jsp:include page="head.jsp" />
 
-<body role="document">
+    <body>
 
-<div class="container-fluid"  role="main">
-    Here are all the characters you are currently storing.
-    If you would like to add, delete, or update a character, please
-    fill out the following form and click the appopriate button.
+    <h2>Are you sure you want to delete this character?</h2>
+    <a href="deletionConfirmed.jsp">Yes</a>
+    <a href="viewCharacters.jsp">No</a>
 
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password">
-        <label for="characterName">Character's name:</label>
-        <input type="text" id="characterName">
-
-        <button type="submit" formaction="addCharacter.jsp">Add a Character</button>
-        <button type="submit" formaction="updateCharacter.jsp">Update a Character</button>
-        <button type="submit" formaction="deleteCharacter.jsp">Delete a Character</button>
-    </form>
-    <a href="addCharacter.jsp">Add a Character</a>
-    <a href="updateCharacter.jsp">Update a Character</a>
-    <a href="deleteCharacter.jsp">Delete a Character</a></td>
-    <h2>Characters: </h2>
     <table id="trailsTable" class="display" cellspacing="0" width="100%">
         <thead>
         <th>Name</th>
@@ -74,7 +57,6 @@
         </c:forEach>
         </tbody>
     </table>
-</div>
+    </body>
 
-</body>
 </html>
