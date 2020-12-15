@@ -1,18 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: paulawaite
-  Date: 9/20/15
-  Time: 9:04 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>Welcome</title>
-</head>
+<jsp:include page="head.jsp" />
+
 <body>
     <form action="j_security_check" method="POST">
-        <table>
+        <table class="pure-table pure-table-bordered">
             <tr><td>User name: <input type="text" name="j_username">
             <tr><td>Password: <input type="password" name="j_password">
             <tr><th><input type="submit" VALUE="Log In">

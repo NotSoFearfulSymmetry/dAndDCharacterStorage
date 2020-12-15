@@ -1,20 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: paulawaite
-  Date: 9/18/15
-  Time: 5:59 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>Admin</title>
-</head>
+<jsp:include page="head.jsp" />
+
 <body>
-  This is the admin page where fancy admin-only stuff happens.
-  <ul>
-    <li><a href="display.jsp">Take me to the Display Page</a></li>
-    <li><a href="index.jsp">Take me Home</a></li>
-  </ul>
+  <p>You have entered the archmage's inner sanctum.  Be careful what you touch.</p>
+    <a href="index.jsp">Return to the character vault</a>
 </body>
 </html>

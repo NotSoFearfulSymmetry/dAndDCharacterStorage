@@ -1,19 +1,26 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: paulawaite
-  Date: 9/18/15
-  Time: 5:41 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-  <head>
-    <title>Form-Based Authentication Example</title>
-  </head>
+<jsp:include page="head.jsp" />
+
   <body>
+    <h1>Welcome, adventurer, to the D&D Character Storage Vault!</h1>
+    <p>Here you can keep track of your D&D characters between games, and have
+    them available wherever and whenever you connect to the web.  You'll be
+    able to add, remove, and update characters as needed.  You'll even be able
+    to share access with a friend!</p>
+    <p>If you're new to D&D, click
+      <a href="https://www.polygon.com/deals/21294556/dnd-how-to-play-dungeons-dragons-5e-guide-spells-dice-character-sheets-dm">here</a>
+      for an introduction.</p>
     <ul>
-      <li><a href="admin.jsp">Take me to the Admin Page</a></li>
-      <li><a href="viewCharacters.jsp">Show me my characters!</a></li>
+      <li><a href="newUser.jsp">Sounds great - sign me up!</a></li>
+      <li><a href="viewCharacters.jsp">I'm already signed up - show me my characters!</a></li>
+      <li><a href="admin.jsp">Take me to the admin page (admins only - all others
+      will be fed to the tarrasque!)</a></li>
     </ul>
+    <p>If you're interested in setting up one or more encounters for your party,
+    enter a challenge rating here and get a list of some of the monsters that
+    would keep them on their toes.</p>
+    <input type="number"><button>Get that list</button>
+<%--    TODO: add the monster API. --%>
   </body>
 </html>

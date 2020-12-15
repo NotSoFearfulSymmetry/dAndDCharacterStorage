@@ -1,8 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-  <head>
-    <title>D&D Character Storage Vault</title>
-  </head>
+<jsp:include page="head.jsp" />
+
   <body>
     <h1>Welcome, adventurer, to the D&D Character Storage Vault!</h1>
     <p>Here you can keep track of your D&D characters between games, and have
