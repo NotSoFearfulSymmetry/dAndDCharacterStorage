@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddCharacter", urlPatterns = { "/addCharacter" } )
+@WebServlet(name = "UpdateCharacter", urlPatterns = { "/updateCharacter" } )
 
-public class AddCharacter extends HttpServlet {
+public class UpdateCharacter extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -53,7 +53,7 @@ public class AddCharacter extends HttpServlet {
         character.setUser(user);
 
         GenericDao characterDao = DaoFactory.createDao(Character.class);
-        int id = characterDao.insert(character);
+        int id = characterDao.saveOrUpdate(character);
 
         req.setAttribute("character", characterDao.getById(id));
         logger.debug("Getting the character...");

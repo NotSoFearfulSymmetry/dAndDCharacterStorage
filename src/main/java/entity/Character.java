@@ -444,7 +444,7 @@ public class Character {
      * Gets second account name, if applicable
      * @return the second account name
      */
-    public String getSecondUserName() {
+    public String getSecondUsername() {
         return secondUsername;
     }
 
@@ -452,7 +452,7 @@ public class Character {
      * Sets second account name, if applicable
      * @param secondUsername the second account name
      */
-    public void setSecondUserName(String secondUsername) {
+    public void setSecondUsername(String secondUsername) {
         this.secondUsername = secondUsername;
     }
 

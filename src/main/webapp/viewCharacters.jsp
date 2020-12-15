@@ -15,9 +15,9 @@
         <label for="characterName">Character's name:</label>
         <input type="text" id="characterName">
 
-        <button type="submit" formaction="addCharacter.jsp">Add a Character</button>
-        <button type="submit" formaction="updateCharacter.jsp">Update a Character</button>
-        <button type="submit" formaction="deleteCharacter.jsp">Delete a Character</button>
+        <button type="submit" formaction="/addCharacter">Add a Character</button>
+        <button type="submit" formaction="/updateCharacter">Update a Character</button>
+        <button type="submit" formaction="/deleteCharacter">Delete a Character</button>
     </form>
     <a href="addCharacter.jsp">Add a Character</a>
     <a href="updateCharacter.jsp">Update a Character</a>
@@ -46,7 +46,6 @@
         <th>Second Username</th>
         </thead>
         <tbody>
-        <jsp:useBean id="characters" scope="request" type="java.util.List" />
         <c:forEach var="character" items="${characters}">
             <tr>
                 <td>${character.name}</td>
