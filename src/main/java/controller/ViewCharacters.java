@@ -24,7 +24,8 @@ public class ViewCharacters extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        GenericDao<Character> dao = DaoFactory.createDao(Character.class);
+        GenericDao dao = DaoFactory.createDao(Character.class);
+//        GenericDao dao = new GenericDao(Character.class);
         List<Character> characters = dao.getAll();
         req.setAttribute("characters", characters);
         logger.debug("Sending back the character/s..." + characters);

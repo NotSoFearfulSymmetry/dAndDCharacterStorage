@@ -31,13 +31,13 @@ public class AddCharacter extends HttpServlet {
         character.setGender(req.getParameter("gender"));
         character.setClassAndLevel(req.getParameter("classAndLevel"));
 
-        character.setStrength(req.getParameter("strength"));
-        character.setDexterity(req.getParameter("dexterity"));
-        character.setConstitution(req.getParameter("constitution"));
-        character.setIntelligence(req.getParameter("intelligence"));
-        character.setWisdom(req.getParameter("wisdom"));
-        character.setCharisma(req.getParameter("charisma"));
-        character.setHitPoints(req.getParameter("hitPoints"));
+        character.setStrength(Integer.parseInt(req.getParameter("strength")));
+        character.setDexterity(Integer.parseInt(req.getParameter("dexterity")));
+        character.setConstitution(Integer.parseInt(req.getParameter("constitution")));
+        character.setIntelligence(Integer.parseInt(req.getParameter("intelligence")));
+        character.setWisdom(Integer.parseInt(req.getParameter("wisdom")));
+        character.setCharisma(Integer.parseInt(req.getParameter("charisma")));
+        character.setHitPoints(Integer.parseInt(req.getParameter("hitPoints")));
 
         character.setSkills(req.getParameter("skills"));
         character.setFeats(req.getParameter("feats"));
@@ -45,7 +45,7 @@ public class AddCharacter extends HttpServlet {
         character.setEquipment(req.getParameter("equipment"));
         character.setDescription(req.getParameter("description"));
         character.setBackground(req.getParameter("background"));
-        character.setSecondUserAccess(req.getParameter("secondUserAccess"));
+        character.setSecondUserAccess(Boolean.parseBoolean(req.getParameter("secondUserAccess")));
         character.setSecondUsername(req.getParameter("secondUsername"));
 
         GenericDao userDao = DaoFactory.createDao(User.class);
@@ -56,7 +56,7 @@ public class AddCharacter extends HttpServlet {
         int id = characterDao.insert(character);
 
         req.setAttribute("character", characterDao.getById(id));
-        logger.debug("Getting the character...");
+        logger.debug("Adding the character...");
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCharacters" +
                 ".jsp");

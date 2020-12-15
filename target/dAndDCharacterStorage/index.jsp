@@ -13,7 +13,7 @@
       for an introduction.</p>
     <ul>
       <li><a href="newUser.jsp">Sounds great - sign me up!</a></li>
-      <li><a href="viewCharacters.jsp">I'm already signed up - show me my characters!</a></li>
+      <li><a href="/viewCharacters">">I'm already signed up - show me my characters!</a></li>
       <li><a href="admin.jsp">Take me to the admin page (admins only - all others
       will be fed to the tarrasque!)</a></li>
     </ul>
