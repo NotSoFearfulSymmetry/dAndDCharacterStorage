@@ -21,7 +21,8 @@
     enter a challenge rating here and get a list of some of the monsters that
       would keep them on their toes.  (Service provided by the
       <a href="http://www.dnd5eapi.co/">Dungeons & Dragons API</a>).</p>
-    <input type="number"><button>Get that list</button>
+      <label for="challengeRating">Challenge Rating: </label>
+      <input type="text" id="challengeRating" name="challengeRating"><button>Get that list</button>
     </form>
   </body>
 </html>
