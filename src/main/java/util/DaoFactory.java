@@ -2,6 +2,10 @@ package util;
 
 import persistence.GenericDao;
 
+/**
+ * A factory for creating generic DAOs.
+ *
+ */
 public class DaoFactory {
 
     private DaoFactory() {

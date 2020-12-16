@@ -66,4 +66,10 @@
 
 12/9/2020 - got unit tests working: 1 hour
 
-12/10/2020 - added servlets and JSPs for CRUD functionality
+12/10/2020 - added servlets and JSPs for CRUD functionality: 1 hour
+
+12/14/2020 - worked on servlets and JSPs: 2 hours
+
+12/15/2020 - servlets and JSPs: 4 hours
+
+12/16/2020 - final revisions: 6 hours

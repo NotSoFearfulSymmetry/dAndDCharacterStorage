@@ -16,17 +16,23 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
+/**
+ * A servlet for handling the monster API.
+ */
 @WebServlet(name = "getMonsters", urlPatterns = "/getMonsters")
 public class MonsterAPI extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Thiis method handles get actions.
+     * @param req the request
+     * @param res the response
+     * @throws IOException if an input/output exception occurs
+     * @throws ServletException if a servlet exception occurs
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-
-//    https://www.dnd5eapi.co/api/monsters?challenge_rating=2
-
-//    https://www.dnd5eapi.co/api/monsters?challenge_rating=2&choose=1
 
         Client client = ClientBuilder.newClient();
         WebTarget target =

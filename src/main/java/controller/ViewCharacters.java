@@ -15,12 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * A servlet for displaying a user's characters.
+ */
 @WebServlet(name = "ViewCharacters", urlPatterns = { "/viewCharacters" } )
-
 public class ViewCharacters extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * This method handles get actions.
+     * @param req the request
+     * @param resp the response
+     * @throws ServletException if a servlet exception is thrown
+     * @throws IOException if an input/output exception is thrown
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

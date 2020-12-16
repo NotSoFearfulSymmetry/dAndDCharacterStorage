@@ -15,12 +15,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * A servlet for deleting a character.
+ */
 @WebServlet(name = "DeleteCharacter", urlPatterns = { "/deleteCharacter" } )
-
 public class DeleteCharacter extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * This method handles post actions.
+     * @param req the request
+     * @param resp the response
+     * @throws ServletException if a servlet exception is thrown
+     * @throws IOException if an input/output exception is thrown
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
