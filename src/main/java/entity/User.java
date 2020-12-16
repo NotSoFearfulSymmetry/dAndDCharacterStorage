@@ -9,8 +9,6 @@ import java.util.Set;
 
 /**
  * A class to represent a user.
- *
- * @author Simon Powers-Schaub
  */
 @Entity(name = "User")
 @Table(name = "user")
@@ -35,6 +33,12 @@ public class User {
      */
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Character> characters = new HashSet<>();
+
+    /**
+     * Bidirectional @OneToMany
+     */
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Role> roles = new HashSet<Role>();
 
     /**
      * Instantiates a new User.
@@ -153,15 +157,13 @@ public class User {
         character.setUser( null );
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "user_id=" + id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", characters=" + characters +
-                '}';
+    /**
+     * Add role.
+     *
+     * @param role the role
+     */
+    public void addRole(Role role) {
+        roles.add(role);
     }
 
     @Override
@@ -177,5 +179,17 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, userName, email);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", characters=" + characters +
+                ", roles=" + roles +
+                '}';
     }
 }

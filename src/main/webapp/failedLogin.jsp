@@ -1,10 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
 <jsp:include page="head.jsp" />
 
 <body>
-  Invalid userid/password combination. <br />
-  <a href="login.jsp">Try again</a>
+  We could not verify your identity, adventurer.
+  <a href="login.jsp">Return to the vault and try again</a>.
 </body>
 </html>
 

@@ -1,5 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
 <jsp:include page="head.jsp" />
 
   <body>
@@ -13,14 +11,16 @@
       for an introduction.</p>
     <ul>
       <li><a href="newUser.jsp">Sounds great - sign me up!</a></li>
-      <li><a href="/viewCharacters">">I'm already signed up - show me my characters!</a></li>
+      <li><a href="viewCharacters.jsp">"I'm already signed up - show me my characters!</a></li>
       <li><a href="admin.jsp">Take me to the admin page (admins only - all others
       will be fed to the tarrasque!)</a></li>
     </ul>
+    <form action="getMonsters" method="get">
     <p>If you're interested in setting up one or more encounters for your party,
     enter a challenge rating here and get a list of some of the monsters that
-    would keep them on their toes.</p>
+      would keep them on their toes.  (Service provided by the
+      <a href="http://www.dnd5eapi.co/">Dungeons & Dragons API</a>).</p>
     <input type="number"><button>Get that list</button>
-<%--    TODO: add the monster API. --%>
+    </form>
   </body>
 </html>

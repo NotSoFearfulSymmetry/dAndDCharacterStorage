@@ -1,5 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
 <jsp:include page="head.jsp" />
 
 <body>
@@ -7,21 +5,18 @@
     If you would like to add, delete, or update a character, please
     fill out the following form and click the appopriate button.</p>
 
-    <form class="pure-form pure-form-aligned">
+    <form class="pure-form pure-form-stacked">
         <label for="username">Username:</label>
         <input type="text" id="username">
         <label for="password">Password:</label>
         <input type="password" id="password">
         <label for="characterName">Character's name:</label>
-        <input type="text" id="characterName">
+        <input type="text" id="characterName"><br>
 
         <button type="submit" formaction="/addCharacter">Add a Character</button>
         <button type="submit" formaction="/updateCharacter">Update a Character</button>
         <button type="submit" formaction="/deleteCharacter">Delete a Character</button>
     </form>
-    <a href="addCharacter.jsp">Add a Character</a>
-    <a href="updateCharacter.jsp">Update a Character</a>
-    <a href="deleteCharacter.jsp">Delete a Character</a></td>
     <h2>Characters: </h2>
     <table id="charactersTable" class="pure-table pure-table-bordered">
         <thead>

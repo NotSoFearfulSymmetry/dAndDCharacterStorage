@@ -43,11 +43,11 @@ public class MonsterAPI {
         ObjectMapper mapper = new ObjectMapper();
         String json = null;
 
-        try {
-            json = mapper.writeValueAsString(Monster.toString());
-        } catch (JsonProcessingException e) {
-            logger.error("JSON processing exception: " + e);
-        }
+//        try {
+//            json = mapper.writeValueAsString(Monster.toString());
+//        } catch (JsonProcessingException e) {
+//            logger.error("JSON processing exception: " + e);
+//        }
 
         return Response.status(200).entity(json).build();
     }
