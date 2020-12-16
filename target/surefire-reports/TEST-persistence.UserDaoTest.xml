@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="persistence.UserDaoTest" time="9.032" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="persistence.UserDaoTest" time="5.014" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.9.1+1-Ubuntu-0ubuntu1.18.04"/>
@@ -61,10 +61,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="saveOrUpdateSuccess" classname="persistence.UserDaoTest" time="8.178"/>
-  <testcase name="getAllSuccess" classname="persistence.UserDaoTest" time="0.329"/>
-  <testcase name="getByPropertyEqualSuccess" classname="persistence.UserDaoTest" time="0.091"/>
-  <testcase name="getByPropertyLikeSuccess" classname="persistence.UserDaoTest" time="0.095"/>
-  <testcase name="getByIdSuccess" classname="persistence.UserDaoTest" time="0.063"/>
-  <testcase name="insertSuccess" classname="persistence.UserDaoTest" time="0.113"/>
+  <testcase name="saveOrUpdateSuccess" classname="persistence.UserDaoTest" time="4.298"/>
+  <testcase name="getAllSuccess" classname="persistence.UserDaoTest" time="0.238"/>
+  <testcase name="getByPropertyEqualSuccess" classname="persistence.UserDaoTest" time="0.096"/>
+  <testcase name="getByPropertyLikeSuccess" classname="persistence.UserDaoTest" time="0.075"/>
+  <testcase name="getByIdSuccess" classname="persistence.UserDaoTest" time="0.095"/>
+  <testcase name="insertSuccess" classname="persistence.UserDaoTest" time="0.115"/>
 </testsuite>

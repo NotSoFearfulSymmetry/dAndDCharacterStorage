@@ -11,7 +11,7 @@
       <a href="https://www.polygon.com/deals/21294556/dnd-how-to-play-dungeons-dragons-5e-guide-spells-dice-character-sheets-dm">here</a>
       for an introduction.</p>
     <ul>
-      <li><a href="newUser.jsp">Sounds great - sign me up!</a></li>
+      <li><a href="addUser.jsp">Sounds great - sign me up!</a></li>
       <li><a href="viewCharacters.jsp">I'm already signed up - show me my characters!</a></li>
       <li><a href="admin.jsp">Take me to the admin page (admins only - all others
       will be fed to the tarrasque!)</a></li>

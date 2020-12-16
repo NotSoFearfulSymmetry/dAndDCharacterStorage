@@ -1,6 +1,10 @@
 package service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Monster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,60 +12,38 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 
-/**
- * A class to retrieve information about monsters from the D&D API.
- */
-@WebServlet(urlPatterns = {"/getMonsters"})
-//@Path("/monsterAPI")
+@WebServlet(name = "getMonsters", urlPatterns = "/getMonsters")
 public class MonsterAPI extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    /**
-     * Gets a list of monsters of a given challenge rating.
-     * @param req the request
-     * @param resp the response
-     * @throws ServletException if there's a servlet exception
-     * @throws IOException if there's an input/output exception
-     */
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
-        String challengeRating = req.getParameter("challengeRating");
+//    https://www.dnd5eapi.co/api/monsters?challenge_rating=2
 
-        req.setAttribute("challengeRating", challengeRating);
-        String url = "https://www.dnd5eapi.co/api/monsters?challenge_rating=" + challengeRating;
+//    https://www.dnd5eapi.co/api/monsters?challenge_rating=2&choose=1
+
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target(url);
-
+        WebTarget target =
+                client.target("https://www.dnd5eapi.co/api/monsters/adult-black-dragon/");
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        ObjectMapper mapper = new ObjectMapper();
 
-//        Monster monster = new Monster();
-//        ObjectMapper mapper = new ObjectMapper();
-//        String json = null;
-//
-//        try {
-//            json = mapper.writeValueAsString(monster);
-//        } catch (JsonProcessingException e) {
-//            logger.error("JSON processing exception: " + e);
-//        }
-//
-//        return Response.status(200).entity(json).build();
+        try {
+            Monster sampleMonster = mapper.readValue(response, Monster.class);
+        } catch (JsonProcessingException jse) {
+            logger.error("JSON processing exception", jse);
+        }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/showMonsters.jsp");
-        dispatcher.forward(req, resp);
+        String url = "/showMonsters.jsp";
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(req, res);
+
     }
 }
