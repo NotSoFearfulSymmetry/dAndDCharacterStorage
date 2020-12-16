@@ -1,9 +1,11 @@
 <jsp:include page="head.jsp" />
 
+<html>
 <body>
-    <p>Here are all the characters you are currently storing.
+    <h1>Behold, adventurer!</h1>
+    <p>Before you are all the personas you have stored in the vault.
     If you would like to add, delete, or update a character, please
-    fill out the following form and click the appopriate button.</p>
+    fill out the following record and lay your hand on the appropriate sigil.</p>
 
     <form class="pure-form pure-form-stacked">
         <label for="username">Username:</label>
@@ -13,11 +15,10 @@
         <label for="characterName">Character's name:</label>
         <input type="text" id="characterName"><br>
 
-        <button type="submit" formaction="/addCharacter">Add a Character</button>
-        <button type="submit" formaction="/updateCharacter">Update a Character</button>
-        <button type="submit" formaction="/deleteCharacter">Delete a Character</button>
+        <button type="submit" formaction="addCharacter">Add a Character</button>
+        <button type="submit" formaction="updateCharacter">Update a Character</button>
+        <button type="submit" formaction="deleteCharacter">Delete a Character</button>
     </form>
-    <h2>Characters: </h2>
     <table id="charactersTable" class="pure-table pure-table-bordered">
         <thead>
         <th>Name</th>
@@ -41,11 +42,12 @@
         <th>Second Username</th>
         </thead>
         <tbody>
+        <%--@elvariable id="characters" type="java.util.List"--%>
         <c:forEach var="character" items="${characters}">
             <tr>
                 <td>${character.name}</td>
                 <td>${character.race}</td>
-                <td>${character.gender} ${trail.lengthUnits}</td>
+                <td>${character.gender}</td>
                 <td>${character.classAndLevel}</td>
                 <td>${character.strength}</td>
                 <td>${character.dexterity}</td>
@@ -66,7 +68,6 @@
         </c:forEach>
         </tbody>
     </table>
-</div>
 
 </body>
 </html>

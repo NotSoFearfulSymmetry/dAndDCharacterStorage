@@ -15,6 +15,12 @@
     </form-login-config>
   </login-config>
 
+  <!--  Forbidden access error-->
+  <error-page>
+    <error-code>403</error-code>
+    <location>/forbiddenError.jsp</location>
+  </error-page>
+
   <!-- Protect the admin page. -->
   <security-constraint>
     <web-resource-collection>

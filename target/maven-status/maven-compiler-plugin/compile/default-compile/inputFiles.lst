@@ -1,0 +1,13 @@
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/controller/UpdateCharacter.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/entity/Character.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/controller/AddUser.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/service/MonsterAPI.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/entity/Monster.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/persistence/GenericDao.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/entity/User.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/entity/Role.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/persistence/SessionFactoryProvider.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/controller/ViewCharacters.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/controller/AddCharacter.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/controller/DeleteCharacter.java
+/home/student/IdeaProjects/dAndDCharacterStorage/src/main/java/util/DaoFactory.java

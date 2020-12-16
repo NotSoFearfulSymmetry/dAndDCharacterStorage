@@ -6,3 +6,5 @@
         userRoleTable="role" roleNameCol="role_name" >
    	</Realm>
 </Context>
+
+<!--change password when deploying to AWS or locally-->

@@ -1,5 +1,7 @@
 <jsp:include page="head.jsp" />
 
+<html>
+
 <body>
     <form id="signUpForm" role="form" data-toggle="validator" class="pure-form"
           action="signUpUser"

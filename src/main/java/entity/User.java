@@ -2,7 +2,9 @@ package entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.*;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -12,7 +14,7 @@ import java.util.Set;
  */
 @Entity(name = "User")
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -31,6 +33,8 @@ public class User {
     /**
      * Bidirectional @OneToMany
      */
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Character> characters = new HashSet<>();
 
@@ -38,6 +42,8 @@ public class User {
      * Bidirectional @OneToMany
      */
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Role> roles = new HashSet<Role>();
 
     /**

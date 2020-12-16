@@ -8,3 +8,10 @@ body {
     padding: 80px 10px 10px 10px;
     margin: 0;
 }
+
+.forbidden {
+    font-family: "Copperplate Gothic Bold", fantasy;
+    font-size: xx-large;
+    font-weight: bold;
+    color: red;
+}

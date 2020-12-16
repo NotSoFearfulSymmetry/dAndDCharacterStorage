@@ -1,5 +1,6 @@
 <jsp:include page="head.jsp" />
 
+<html>
   <body>
     <h1>Welcome, adventurer, to the D&D Character Storage Vault!</h1>
     <p>Here you can keep track of your D&D characters between games, and have
@@ -11,7 +12,7 @@
       for an introduction.</p>
     <ul>
       <li><a href="newUser.jsp">Sounds great - sign me up!</a></li>
-      <li><a href="viewCharacters.jsp">"I'm already signed up - show me my characters!</a></li>
+      <li><a href="viewCharacters.jsp">I'm already signed up - show me my characters!</a></li>
       <li><a href="admin.jsp">Take me to the admin page (admins only - all others
       will be fed to the tarrasque!)</a></li>
     </ul>

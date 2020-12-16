@@ -25,10 +25,11 @@ public class ViewCharacters extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         GenericDao dao = DaoFactory.createDao(Character.class);
-//        GenericDao dao = new GenericDao(Character.class);
         List<Character> characters = dao.getAll();
         req.setAttribute("characters", characters);
         logger.debug("Sending back the character/s..." + characters);
+
+        System.out.println("One ring to rule them all");
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCharacters" +
                 ".jsp");

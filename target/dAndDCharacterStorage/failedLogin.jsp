@@ -1,9 +1,8 @@
 <jsp:include page="head.jsp" />
 
+<html>
 <body>
-  Invalid userid/password combination. <br />
-  <a href="login.jsp">Try again</a>
+    <p>We could not verify your identity, adventurer.</p>
+    <a href="login.jsp">Return to the vault and try again</a>.
 </body>
 </html>
-
-
